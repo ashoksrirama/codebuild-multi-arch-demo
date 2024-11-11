@@ -16,7 +16,7 @@ jobs:
     strategy:
       matrix:
         arch: [arm64, x86]
-    runs-on: codebuild-codebuild-multiarch-${{ matrix.arch }}-${{ github.run_id }}-${{ github.run_attempt }}
+    runs-on: codebuild-myapp1-${{ matrix.arch }}-${{ github.run_id }}-${{ github.run_attempt }}
     permissions:
       contents: read
       id-token: write
@@ -58,7 +58,7 @@ jobs:
   
   manifest:
     needs: build
-    runs-on: codebuild-codebuild-multiarch-x86-${{ github.run_id }}-${{ github.run_attempt }}
+    runs-on: codebuild-myapp1-x86-${{ github.run_id }}-${{ github.run_attempt }}
     permissions:
       contents: read
       id-token: write
